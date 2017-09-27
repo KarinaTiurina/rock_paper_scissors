@@ -1,15 +1,38 @@
-<% if @result == 0 %>
-  Draw
-<% elsif @result == 1 %>
-  You won
-<% else %>
-  You lose
-<% end %>!
-<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1 class="text-center buffer-both">
+        <% if @winner == :draw %>
+          Ничья!
+        <% elsif @winner == :player %>
+          Вы выиграли!
+        <% else %>
+          Вы проиграли!
+        <% end %>
+      </h1>
+    </div>
+  </div>
 
-Your choice <br />
-<%= image_tag(@game[@player_choice] + '_result.jpg') %> <br />
-Computer choice <br />
-<%= image_tag(@game[@computer_choice] + '_result.jpg') %> <br />
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="text-center">
+        <h3>Ваш выбор</h3>
+        <%= image_tag(@game[@player_choice] + end_of_name(@winner, :player) + '.jpg', :class => "item-img") %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="text-center">
+        <h3>Выбор компьютера</h3>
+        <%= image_tag(@game[@computer_choice] + end_of_name(@winner, :computer) + '.jpg', :class => "item-img") %>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Play again', root_path %>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="text-right buffer-both">
+        <%= link_to 'Сыграть еще', root_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>

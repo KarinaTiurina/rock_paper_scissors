@@ -7,11 +7,22 @@ class GamesController < ApplicationController
   def show
     @player_choice = params[:id].to_i
     @computer_choice = rand(3)
-    @result = determine_the_winner(@player_choice, @computer_choice)
+    @winner = winner
   end
 
   def set_game
     @game = ['rock', 'scissors', 'paper']
+  end
+
+  def winner
+    result = determine_the_winner(@player_choice, @computer_choice)
+    if result == 1
+      :player
+    elsif result == 2
+      :computer
+    else
+      :draw
+    end
   end
 
   def determine_the_winner(first_player, second_player)

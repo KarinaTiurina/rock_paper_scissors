@@ -1,3 +1,4 @@
+<h1>Ваш выбор:</h1>
 <% @game.each_with_index do |value, i|%>
-  <%= link_to image_tag(value + '.jpg'), game_path(i) %>
+  <%= link_to image_tag(value + '.jpg', :class => "item-img"), game_path(i) %>
 <% end %>

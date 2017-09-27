@@ -1,0 +1,15 @@
+<% if @result == 0 %>
+  Draw
+<% elsif @result == 1 %>
+  You won
+<% else %>
+  You lose
+<% end %>!
+<br />
+
+Your choice <br />
+<%= image_tag(@game[@player_choice] + '_result.jpg') %> <br />
+Computer choice <br />
+<%= image_tag(@game[@computer_choice] + '_result.jpg') %> <br />
+
+<%= link_to 'Play again', root_path %>

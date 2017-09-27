@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'game#choose'
+  root 'games#new'
+
+  resources :games, only: [:new, :show]
 end

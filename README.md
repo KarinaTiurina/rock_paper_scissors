@@ -1,24 +1,21 @@
-# README
+# Игра "Камень-Ножницы-Бумага"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Игра написана с помощью `rails 5.1.4`.
 
-Things you may want to cover:
+Для запуска:
 
-* Ruby version
+    bundle exec rails s
 
-* System dependencies
+Игроки одновременно выбирают один из трех предметов: камень, ножницы или бумагу.
 
-* Configuration
+Победитель определяется по следующим правилам:
 
-* Database creation
+    Камень побеждает ножницы («камень слишком крепок для ножниц»)
+    Бумага побеждает камень («бумага накрывает камень»)
+    Ножницы побеждают бумагу («ножницы разрезают бумагу»)
 
-* Database initialization
+Если игроки показали одинаковый знак, то засчитывается ничья и игра переигрывается.
 
-* How to run the test suite
+Подробнее можно почитать [тут](https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C,_%D0%BD%D0%BE%D0%B6%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D0%B0)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Сыграть в "Камень-Ножницы-Бумага" можно [здесь](http://r-s-p-game.herokuapp.com/)
